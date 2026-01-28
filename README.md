@@ -2,6 +2,9 @@
 v1 
 **Universal AI Security Framework** - Protect LLM applications from prompt injection and adversarial attacks
 
+**⚠️This project is evolving rapidly occasional instability is expected**
+
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 ---
