@@ -8,6 +8,7 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![PyPI](https://img.shields.io/badge/pypi-v2.0.0-blue.svg)](https://pypi.org/project/promptshields/)
 [![Security: 9.7/10](https://img.shields.io/badge/security-9.7%2F10-brightgreen)](PHASE1_README.md)
+[![PyPI version](https://badge.fury.io/py/promptshields.svg)](https://pypi.org/project/promptshields/)
 
 *Defense-in-depth protection for LLM applications against prompt injection, jailbreaks, and data leakage*
 
