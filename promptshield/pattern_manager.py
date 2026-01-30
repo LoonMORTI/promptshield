@@ -207,6 +207,19 @@ class PatternManager:
             if pattern['pattern'].lower() in text_lower:
                 score = max(score, 0.8)
         
+        # Check prompt field (for attack examples)
+        if 'prompt' in pattern and score == 0.0:
+            prompt_lower = pattern['prompt'].lower()
+            # Check for partial match (keyword overlap)
+            prompt_words = set(prompt_lower.split())
+            text_words = set(text_lower.split())
+            overlap = prompt_words & text_words
+            
+            # If significant overlap, consider it a match
+            if len(overlap) >= 3:  # At least 3 common words
+                overlap_ratio = len(overlap) / len(prompt_words)
+                score = max(score, overlap_ratio * 0.75)
+        
         # Check keywords
         if 'keywords' in pattern:
             keywords = pattern['keywords']
