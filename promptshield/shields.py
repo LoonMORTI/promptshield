@@ -265,6 +265,107 @@ class Shield:
         """Initialize subsystems (caching, async, etc.)"""
         self.prediction_cache = {} if self.config["cache_predictions"] else None
     
+    # ========================================
+    # Factory Methods (Presets)
+    # ========================================
+    
+    @classmethod
+    def fast(cls, **kwargs):
+        """
+        Fast preset - Pattern matching only.
+        
+        Latency: <1ms
+        Features: Pattern matching
+        
+        Args:
+            **kwargs: Override default settings
+        """
+        defaults = {
+            "patterns": True,
+            "models": None,
+            "canary": False,
+            "rate_limiting": False,
+            "session_tracking": False,
+            "pii_detection": False,
+        }
+        defaults.update(kwargs)
+        return cls(**defaults)
+    
+    @classmethod
+    def balanced(cls, **kwargs):
+        """
+        Balanced preset - Production default.
+        
+        Latency: ~1-2ms
+        Features: Patterns + Session tracking
+        
+        Args:
+            **kwargs: Override default settings
+        """
+        defaults = {
+            "patterns": True,
+            "models": None,
+            "canary": False,
+            "rate_limiting": False,
+            "session_tracking": True,
+            "session_history": 10,
+            "pii_detection": False,
+        }
+        defaults.update(kwargs)
+        return cls(**defaults)
+    
+    @classmethod
+    def strict(cls, **kwargs):
+        """
+        Strict preset - High security.
+        
+        Latency: ~3-5ms
+        Features: Patterns + Rate limiting + Session tracking + PII
+        
+        Args:
+            **kwargs: Override default settings
+        """
+        defaults = {
+            "patterns": True,
+            "models": None,
+            "canary": False,
+            "rate_limiting": True,
+            "rate_limit_base": 50,
+            "session_tracking": True,
+            "session_history": 20,
+            "pii_detection": True,
+            "pii_redaction": "mask",
+        }
+        defaults.update(kwargs)
+        return cls(**defaults)
+    
+    @classmethod
+    def secure(cls, **kwargs):
+        """
+        Secure preset - Maximum protection.
+        
+        Latency: ~5-10ms
+        Features: All protections enabled
+        
+        Args:
+            **kwargs: Override default settings
+        """
+        defaults = {
+            "patterns": True,
+            "models": None,
+            "canary": True,
+            "canary_mode": "crypto",
+            "rate_limiting": True,
+            "rate_limit_base": 50,
+            "session_tracking": True,
+            "session_history": 20,
+            "pii_detection": True,
+            "pii_redaction": "smart",
+            "verify_models": False,
+        }
+        defaults.update(kwargs)
+        return cls(**defaults)
+    
     def protect_input(
         self,
         user_input: str,
