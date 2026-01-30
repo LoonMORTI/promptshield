@@ -1,0 +1,95 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "promptshield"
+version = "2.0.0"
+description = "Enterprise-Grade LLM Security Framework - Protect against prompt injection, jailbreaks, and data leakage"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = [
+    "llm", "security", "prompt-injection", "jailbreak", 
+    "ai-safety", "guardrails", "openai", "langchain"
+]
+authors = [
+    {name = "Neuralchemy", email = "security@neuralchemy.com"}
+]
+maintainers = [
+    {name = "Neuralchemy", email = "security@neuralchemy.com"}
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "numpy>=1.20.0",
+    "scikit-learn>=1.0.0",
+    "cryptography>=3.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=3.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+]
+ml = [
+    "xgboost>=1.5.0",
+    "sentence-transformers>=2.2.0",
+]
+all = [
+    "promptshield[dev,ml]"
+]
+
+[project.urls]
+Homepage = "https://github.com/Neural-alchemy/promptshield"
+Documentation = "https://github.com/Neural-alchemy/promptshield#documentation"
+Repository = "https://github.com/Neural-alchemy/promptshield"
+Issues = "https://github.com/Neural-alchemy/promptshield/issues"
+Changelog = "https://github.com/Neural-alchemy/promptshield/releases"
+
+[project.scripts]
+promptshield-keygen = "promptshield.scripts.generate_keys:main"
+promptshield-sign = "promptshield.scripts.sign_models:main"
+promptshield-test = "promptshield.scripts.run_evasion_tests:main"
+
+[tool.setuptools]
+packages = ["promptshield"]
+
+[tool.setuptools.package-data]
+promptshield = [
+    "attack_patterns.json",
+    "py.typed",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py38", "py39", "py310", "py311"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "-v --cov=promptshield --cov-report=html --cov-report=term"
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
